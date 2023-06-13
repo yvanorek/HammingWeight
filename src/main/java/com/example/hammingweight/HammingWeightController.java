@@ -10,14 +10,7 @@ import java.math.BigInteger;
 public class HammingWeightController {
     private String previousString;
 
-    @RequestMapping("/api/hamming/previous")
-    public int getPreviousHammingWeight() {
-        if (previousString == null) {
-            return 0;
-        } else {
-            return calculateHammingWeight(previousString);
-        }
-    }
+
 
     @RequestMapping("/api/hamming")
     public int getHammingWeight(@RequestParam("string") String string) {
@@ -34,4 +27,17 @@ public class HammingWeightController {
         }
         return count;
     }
+
+    @RequestMapping ("/api/hamming/previous")
+    public String getPreviousHammingWeight() {
+        if (previousString == null) {
+            return "0";
+        } else {
+            return previousString;
+        }
+    }
+
+
+
+
 }

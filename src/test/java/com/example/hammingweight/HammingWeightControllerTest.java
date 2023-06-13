@@ -24,6 +24,13 @@ class HammingWeightControllerTest {
         assertEquals(expectedOutput,output);
     }
 
+    @Test
+    public void previosTest(){
+        String input="12304560789";
+        hammingWeight.getHammingWeight(input);
+        assertEquals(input,hammingWeight.getPreviousHammingWeight());
+    }
+
 
 
 }
